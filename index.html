@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>True-Shape Nesting</title>
+    <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/design-tokens.css"><link rel="stylesheet" href="css/vipercoma.css">
+</head>
+<body>
+    <div class="brand">VIPERCOMA / SHAPE TOOLS</div><header>
+        <h1>True-Shape Nesting</h1>
+        <span class="sub">No-Fit-Polygon engine</span>
+    </header>
+
+    <section class="group">
+        <h2>Sheet / Artboard (cm)</h2>
+        <div class="row">
+            <label for="binWidth">Width</label>
+            <input type="number" id="binWidth" value="30" min="0.1" step="0.1">
+            <label for="binHeight">Height</label>
+            <input type="number" id="binHeight" value="30" min="0.1" step="0.1">
+        </div>
+        <button id="btnArtboard" class="secondary">Get Artboard Size</button>
+    </section>
+
+    <section class="group">
+        <h2>Settings</h2>
+        <div class="row">
+            <label for="spacing">Spacing (mm)</label>
+            <input type="number" id="spacing" value="1" min="0" step="0.1">
+        </div>
+        <div class="row">
+            <label for="tolerance">Curve tol. (mm)</label>
+            <input type="number" id="tolerance" value="0.2" min="0.01" step="0.05">
+        </div>
+        <div class="row rotations">
+            <span class="lbl">Rotations</span>
+            <label><input type="checkbox" class="rot" value="0" checked> 0°</label>
+            <label><input type="checkbox" class="rot" value="90" checked> 90°</label>
+            <label><input type="checkbox" class="rot" value="180" checked> 180°</label>
+            <label><input type="checkbox" class="rot" value="270" checked> 270°</label>
+        </div>
+        <div class="row">
+            <label for="extraStep">Extra step (°)</label>
+            <input type="number" id="extraStep" value="0" min="0" max="180" step="5" title="0 = off. E.g. 45 adds 45°,135°,…">
+        </div>
+    </section>
+
+    <section class="group actions">
+        <button id="btnNest" class="primary">Nest Shapes</button>
+        <div class="row">
+            <button id="btnPreview" class="secondary">Preview Only</button>
+            <button id="btnApply" class="secondary" disabled>Apply Last Result</button>
+        </div>
+        <div class="progress"><div id="progressBar"></div></div>
+        <div id="progressText" class="small">Idle</div>
+    </section>
+
+    <section class="group preview">
+        <h2>Preview</h2>
+        <canvas id="preview" width="200" height="200"></canvas>
+        <div id="stats" class="small"></div>
+    </section>
+
+    <section class="group">
+        <h2>Log <a href="#" id="clearLog" class="small link">clear</a></h2>
+        <div id="log"></div>
+    </section>
+
+    <script src="js/theme.js"></script><script src="js/dot-background.js"></script><script src="js/CSInterface.js"></script>
+    <script src="js/nfp.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
